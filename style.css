@@ -1,0 +1,226 @@
+:root {
+  --bg-light: #f5f5f5;
+  --nav-bg: rgba(255, 255, 255, 0.8);
+  --accent: #800000;
+  --text-dark: #013938;
+  --panel: rgba(255, 255, 255, 0.92);
+  --line: rgba(1, 57, 56, 0.14);
+  --gold: #b8860b;
+  --porul-bg: rgba(31, 58, 95, 0.06);
+  --porul-color: #1f3a5f;
+}
+* { box-sizing: border-box; }
+html { overflow-x: hidden; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Poppins', 'Noto Sans Tamil', sans-serif;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ===== Cyber background (same as main site) ===== */
+canvas#cyber-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* ===== Header — same structure/theme as main site ===== */
+header {
+  background-color: var(--nav-bg);
+  color: var(--text-dark);
+  padding: 10px;
+  position: relative;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+.header-text h1 {
+  margin: 5px 0;
+  font-family: 'Noto Sans Tamil', 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  color: var(--text-dark);
+}
+.header-text h1.en { font-family: 'Poppins', sans-serif; }
+.site-tagline {
+  margin: 8px 0 0;
+  text-align: center;
+  line-height: 1.45;
+  font-family: 'IBM Plex Mono', monospace;
+}
+.site-tagline span {
+  display: block;
+  color: var(--accent);
+  font-style: italic;
+}
+.site-tagline [lang="ta"] {
+  font-family: 'Noto Sans Tamil', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.site-tagline .tagline-en {
+  font-size: 0.68rem;
+  font-weight: 400;
+  margin-top: 2px;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+}
+
+/* ===== Thirukkural rotator (synced across all visitors by clock time) ===== */
+.kural-box {
+  position: relative;
+  z-index: 5;
+  margin: 20px auto 0;
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+  padding: 0 16px;
+  overflow: hidden;
+}
+.kural-box .kno {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: .5px;
+  margin-bottom: 6px;
+}
+.kural-box .ktext {
+  font-family: 'Noto Sans Tamil', sans-serif;
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.5;
+  margin: 0 0 8px;
+  transition: opacity .4s ease;
+}
+.kural-box .ktext .l1,
+.kural-box .ktext .l2 {
+  display: block;
+  width: max-content;   /* natural text width, so JS can measure it */
+  margin: 0 auto;
+  white-space: nowrap;
+  font-size: 17px;      /* JS auto-shrinks this to fit the box */
+}
+.kural-box .kporul {
+  font-family: 'Noto Sans Tamil', sans-serif;
+  font-size: 13px;
+  color: var(--porul-color);
+  background: var(--porul-bg);
+  border-left: 3px solid var(--porul-color);
+  border-radius: 6px;
+  padding: 10px 14px;
+  line-height: 1.55;
+  text-align: left;
+  transition: opacity .4s ease;
+}
+.kural-box .kporul b {
+  color: var(--accent);
+  font-weight: 700;
+}
+.fade { opacity: 0; }
+
+/* ===== Mail sign-in section ===== */
+main {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 20px 30px;
+}
+.card {
+  background: var(--panel);
+  width: 100%;
+  max-width: 380px;
+  padding: 40px 34px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 34px rgba(1, 57, 56, 0.12);
+  text-align: center;
+}
+a.btn {
+  display: block;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  padding: 13px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: opacity .15s ease;
+}
+a.btn:hover { opacity: .9; }
+
+.platform-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 0 10px;
+  text-align: left;
+}
+.platform-note .zoho-logo {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+.platform-note p {
+  margin: 0;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  line-height: 1.5;
+  color: rgba(1, 57, 56, 0.55);
+}
+
+footer {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: rgba(1, 57, 56, 0.45);
+  padding: 10px 20px 30px;
+}
+.platform-note .note-en { font-family: 'Poppins', sans-serif; }
+
+/* ===== Desktop header: logo on the left, text beside it (matches main site) ===== */
+@media (min-width: 768px) {
+  header { padding: 12px 20px; }
+  .header-content {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .logo {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+  .header-text h1 { font-size: 1.1rem; }
+}
