@@ -95,7 +95,7 @@ header {
   margin: 20px auto 0;
   width: 100%;
   max-width: 480px;
-  text-align: center;
+  text-align: left;
   padding: 0 16px;
   overflow: hidden;
 }
@@ -118,7 +118,7 @@ header {
 .kural-box .ktext .l2 {
   display: block;
   width: max-content;   /* natural text width, so JS can measure it */
-  margin: 0 auto;
+  margin: 0;
   white-space: nowrap;
   font-size: 17px;      /* JS auto-shrinks this to fit the box */
 }
