@@ -92,11 +92,11 @@ header {
 .kural-box {
   position: relative;
   z-index: 5;
-  margin: 20px 0 0;     /* flush to the left side of the page, not centred */
+  margin: 20px auto 0;
   width: 100%;
-  max-width: none;
-  text-align: left;
-  padding: 0 20px;
+  max-width: none;      /* full width so the two kural lines can sit at the page's left */
+  text-align: center;   /* number line stays centred as before */
+  padding: 0 16px;
   overflow: hidden;
 }
 .kural-box .kno {
@@ -118,11 +118,13 @@ header {
 .kural-box .ktext .l2 {
   display: block;
   width: max-content;   /* natural text width, so JS can measure it */
-  margin: 0;
+  margin: 0;            /* the two kural lines only: left aligned */
   white-space: nowrap;
   font-size: 17px;      /* JS auto-shrinks this to fit the box */
 }
 .kural-box .kporul {
+  max-width: 448px;     /* same width as the original 480px box minus padding */
+  margin: 0 auto;
   font-family: 'Noto Sans Tamil', sans-serif;
   font-size: 13px;
   color: var(--porul-color);
