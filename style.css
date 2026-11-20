@@ -92,11 +92,11 @@ header {
 .kural-box {
   position: relative;
   z-index: 5;
-  margin: 20px auto 0;
+  margin: 20px 0 0;     /* flush to the left side of the page, not centred */
   width: 100%;
-  max-width: 480px;
+  max-width: none;
   text-align: left;
-  padding: 0 16px;
+  padding: 0 20px;
   overflow: hidden;
 }
 .kural-box .kno {
