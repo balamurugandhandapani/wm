@@ -224,14 +224,3 @@ footer {
   }
   .header-text h1 { font-size: 1.1rem; }
 }
-
-/* ===== Static intro text (indexable content) ===== */
-.card .intro {
-  margin: 0 0 14px;
-  font-size: 0.85rem;
-  line-height: 1.6;
-  text-align: center;
-  color: var(--text-dark);
-}
-.card .intro [lang="ta"] { font-family: 'Noto Sans Tamil', sans-serif; }
-.card .intro .note-en { font-size: 0.78rem; opacity: .85; }
